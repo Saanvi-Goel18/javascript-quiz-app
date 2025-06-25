@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizMaster Pro</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>QuizMaster</h1>
+
+      <form id="setup-form">
+        <label for="player1">Player 1:</label>
+        <input type="text" id="player1" required />
+
+        <label for="player2">Player 2:</label>
+        <input type="text" id="player2" required />
+
+        <h2>Select a Genre</h2>
+        <div class="genre-cards">
+          <div class="genre-card" data-genre="movies">
+            <img src="assets/movie-icon.png" alt="Movies" />
+            <p>Movies</p>
+          </div>
+          <div class="genre-card" data-genre="history">
+            <img src="assets/history-icon.png" alt="History" />
+            <p>History</p>
+          </div>
+          <div class="genre-card" data-genre="science">
+            <img src="assets/science-icon.png" alt="Science" />
+            <p>Science</p>
+          </div>
+          <div class="genre-card" data-genre="sports">
+            <img src="assets/sports-icon.png" alt="Sports" />
+            <p>Sports</p>
+          </div>
+          <div class="genre-card" data-genre="random">
+            <img src="assets/question-mark.png" alt="Random" />
+            <p>Surprise Me!</p>
+          </div>
+        </div>
+
+        <button type="submit">Start Quiz</button>
+      </form>
+
+      <div id="quiz-box" class="hidden">
+        <div id="quiz-header">
+          <span id="current-player"></span>
+          <span id="question-counter"></span>
+        </div>
+        <div id="question">Loading...</div>
+        <div id="options"></div>
+        <button id="next-btn" class="hidden">Next</button>
+      </div>
+
+      <div id="result" class="hidden">
+        <h2>Quiz Completed</h2>
+        <button id="show-scoreboard">Show Scoreboard</button>
+
+        <div id="scoreboard-section" class="hidden">
+          <h3 id="winner-announcement"></h3>
+          <ul id="scoreboard"></ul>
+          <button onclick="location.reload()">Play Again</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
